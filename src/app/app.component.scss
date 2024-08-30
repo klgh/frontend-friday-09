@@ -9,6 +9,12 @@
   border-radius: 24px 24px 100px 24px;
   padding: 48px 24px 48px 24px;
   gap: 32px;
+
+  @media (min-width: 768px) {
+    max-width: 840px;
+    margin: auto;
+    margin-top: 68px;
+  }
 }
 
 .age-form {
@@ -17,6 +23,9 @@
   flex-wrap: wrap;
   flex-direction: column;
   max-width: 295px;
+  @media (min-width: 768px) {
+    max-width: 840px;
+  }
 
   .age-input {
     display: flex;
@@ -52,21 +61,27 @@
       color: #151515;
       line-height: 30px;
       font-weight: 700;
+      @media (min-width: 768px) {
+        width: min-content;
+      }
     }
 
     .error-message {
-      color: #ff5959;
-      font-size: 7px;
-      margin-top: 0.25rem;
-      font-weight: 400;
-      font-style: italic;
-      line-height: 21px;
-      padding-left: 5px;
-      min-height: 1.5rem; /* Reserve space for error message */
+      min-height: 3.5rem;
+      visibility: hidden;
 
       @media (min-width: 768px) {
         font-size: 14px;
       }
+    }
+    .error-message.show {
+      height: 25px;
+      color: #ff5959;
+      font-size: 7px;
+      font-weight: 400;
+      font-style: italic;
+      padding-left: 5px;
+      visibility: visible;
     }
   }
 }
@@ -104,6 +119,10 @@
   position: relative; /* Position relative for absolute positioning of SVG */
   margin-top: 1rem; /* Add some margin for spacing */
   text-align: center; /* Center align for SVG */
+  @media (min-width: 768px) {
+    max-width: 632px;
+    width: 632px;
+  }
 }
 
 .horizontal-line {
@@ -112,6 +131,11 @@
   background-color: #e4e2e2; /* Line color */
   position: relative; /* Position relative to contain the SVG */
   top: 50%; /* Center the line vertically */
+
+  @media (min-width: 768px) {
+    max-width: 632px;
+    width: 632px;
+  }
 }
 
 .svg-button {

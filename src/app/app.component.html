@@ -1,37 +1,45 @@
 <div class="age-calculator-container">
-  <form [formGroup]="ageForm" (ngSubmit)="calculateAge()">
-    <div>
-      <mat-form-field appearance="fill">
-        <mat-label>Day</mat-label>
-        <input matInput type="number" formControlName="day" />
-        <mat-error *ngIf="ageForm.get('day')?.hasError('required')">Day is required</mat-error>
-        <mat-error *ngIf="ageForm.get('day')?.hasError('min') || ageForm.get('day')?.hasError('max')">
-          Day must be between 1 and 31
-        </mat-error>
-      </mat-form-field>
+  <form [formGroup]="ageForm" (ngSubmit)="calculateAge()" class="age-form">
+    <div class="form-group">
+      <label for="day">Day</label>
+      <input type="number" id="day" formControlName="day" placeholder="DD" />
+      <div *ngIf="ageForm.get('day')?.invalid && ageForm.get('day')?.touched" class="error-message">
+        <span *ngIf="ageForm.get('day')?.errors?.['required']">Day is required</span>
+        <span *ngIf="ageForm.get('day')?.errors?.['min'] || ageForm.get('day')?.errors?.['max']">Invalid day</span>
+      </div>
     </div>
-    <div>
-      <mat-form-field appearance="fill">
-        <mat-label>Month</mat-label>
-        <input matInput type="number" formControlName="month" />
-        <mat-error *ngIf="ageForm.get('month')?.hasError('required')">Month is required</mat-error>
-        <mat-error *ngIf="ageForm.get('month')?.hasError('min') || ageForm.get('month')?.hasError('max')">
-          Month must be between 1 and 12
-        </mat-error>
-      </mat-form-field>
+
+    <div class="form-group">
+      <label for="month">Month</label>
+      <input type="number" id="month" formControlName="month" placeholder="MM" />
+      <div *ngIf="ageForm.get('month')?.invalid && ageForm.get('month')?.touched" class="error-message">
+        <span *ngIf="ageForm.get('month')?.errors?.['required']">Month is required</span>
+        <span *ngIf="ageForm.get('month')?.errors?.['min'] || ageForm.get('month')?.errors?.['max']">Invalid
+          month</span>
+      </div>
     </div>
-    <div>
-      <mat-form-field appearance="fill">
-        <mat-label>Year</mat-label>
-        <input matInput type="number" formControlName="year" />
-        <mat-error *ngIf="ageForm.get('year')?.hasError('required')">Year is required</mat-error>
-        <mat-error *ngIf="ageForm.get('year')?.hasError('max')">Year cannot be in the future</mat-error>
-      </mat-form-field>
+
+    <div class="form-group">
+      <label for="year">Year</label>
+      <input type="number" id="year" formControlName="year" placeholder="YYYY" />
+      <div *ngIf="ageForm.get('year')?.invalid && ageForm.get('year')?.touched" class="error-message">
+        <span *ngIf="ageForm.get('year')?.errors?.['required']">Year is required</span>
+        <span *ngIf="ageForm.get('year')?.errors?.['max']">Invalid year</span>
+      </div>
     </div>
-    <button mat-raised-button color="primary" type="submit" [disabled]="!ageForm.valid">Calculate Age</button>
+
+
+    <button type="submit" class="svg-button" aria-label="Submit">
+      <img src="../assets/svg/icon-arrow.svg" alt="Submit" />
+    </button>
+
+
   </form>
-  <div *ngIf="age" [@fadeIn]>
-    <h3>Age</h3>
-    <p>{{ age.years }} years, {{ age.months }} months, {{ age.days }} days</p>
+
+  <div class="age-output" *ngIf="age">
+    <p><span>{{ age.years }}</span> years</p>
+    <p><span>{{ age.months }}</span> months</p>
+    <p><span>{{ age.days }}</span> days</p>
   </div>
+
 </div>

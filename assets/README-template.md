@@ -56,23 +56,16 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Built with
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.2.
-
+- Semantic HTML5 markup
+- CSS custom properties
 - Flexbox
+- CSS Grid
 - Mobile-first workflow
-- [Angular](https://angular.dev/)
+- [React](https://reactjs.org/) - JS library
+- [Next.js](https://nextjs.org/) - React framework
+- [Styled Components](https://styled-components.com/) - For styles
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Note: These are just examples. Delete this note and replace the list above with your own choices
 
 ### What I learned
 
@@ -115,8 +108,11 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 ## Author
 
-- Website - [kaleigh.dev](https://kaleigh.dev/)
-- Frontend Mentor - [@klgh](https://www.frontendmentor.io/profile/klgh)
+- Website - [Add your name here](https://www.your-site.com)
+- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+
+**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
 
 ## Acknowledgments
 

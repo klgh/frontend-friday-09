@@ -47,6 +47,20 @@ export class AppComponent {
     });
   }
 
+  /**
+   * Calculates the age based on the date provided in the ageForm.
+   *
+   * This method performs the following steps:
+   * 1. Validates the form to ensure it is not invalid.
+   * 2. Extracts the day, month, and year from the form values.
+   * 3. Creates a birthDate object and compares it with the current date.
+   * 4. If the birthDate is in the future or invalid, sets an error on the form.
+   * 5. Calculates the difference in years, months, and days between the current date and the birthDate.
+   * 6. Adjusts the months and days if they are negative.
+   * 7. Updates the age property with the calculated years, months, and days.
+   *
+   * @returns {void}
+   */
   calculateAge() {
     if (this.ageForm.invalid) {
       return;

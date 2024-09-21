@@ -62,24 +62,40 @@ export class AppComponent {
       return;
     }
 
-    let years = currentDate.getFullYear() - birthDate.getFullYear();
-    let months = currentDate.getMonth() - birthDate.getMonth();
-    let days = currentDate.getDate() - birthDate.getDate();
+    // Check if birthDate is in the future
+    if (birthDate > currentDate) {
+      this.age = { years: 0, months: 0, days: 0 };
+    } else {
+      let years = currentDate.getFullYear() - birthDate.getFullYear();
+      let months = currentDate.getMonth() - birthDate.getMonth();
+      let days = currentDate.getDate() - birthDate.getDate();
 
-    if (days < 0) {
-      months--;
-      days += new Date(
-        currentDate.getFullYear(),
-        currentDate.getMonth(),
-        0
-      ).getDate();
+      if (days < 0) {
+        months--;
+        days += new Date(
+          currentDate.getFullYear(),
+          currentDate.getMonth(),
+          0
+        ).getDate();
+      }
+
+      if (months < 0) {
+        years--;
+        months += 12;
+      }
+
+      this.age = { years, months, days };
     }
 
-    if (months < 0) {
-      years--;
-      months += 12;
+    if (this.age.months < 0) {
+      this.age.years--;
+      this.age.months += 12;
     }
 
-    this.age = { years, months, days };
+    this.age = {
+      years: this.age.years,
+      months: this.age.months,
+      days: this.age.days,
+    };
   }
 }
